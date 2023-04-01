@@ -40,7 +40,7 @@ app.post("/signup", async (req, res) => {
                 result: str[result]
             });
             await user.save();
-            res.send(str[result], result)
+            res.send({ src: str[result], result })
 
         } else {
             res.status(500).send("Something went wrong or invalid or used credentials. Please try again later.");
